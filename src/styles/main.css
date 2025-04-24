@@ -1,0 +1,397 @@
+/* ---------------------------------------------------------------
+    Root Variables
+----------------------------------------------------------------*/
+:root {
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+  --color-bg-white: #FBFBFB;
+  --color-bg-light: #f5f5f7;
+  --color-text-dark: #1d1d1f;
+  --color-text-gray: #86868b;
+  --color-blue-link: #0071e3;
+  --color-blue-link-hover: #0077ed;
+  --color-blue-light-gradient-start: #D5EAF6;
+  --color-blue-light-gradient-end: #FEFEFE;
+  --color-blue-gradient-start: #022640;
+  --color-blue-gradient-end: #5786AB;
+}
+
+/* ---------------------------------------------------------------
+    Base Tags
+----------------------------------------------------------------*/
+body {
+  background-color: var(--color-bg-white);
+  font-family: var(--font-family-primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-blue-link);
+}
+
+a:hover {
+  color: var(--color-blue-link-hover);
+}
+
+h1, h2, h3, p {
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.25rem;
+  color: var(--color-text-gray);
+}
+
+button {
+  font-size: 1rem;
+  border: none;
+  border-radius: 50rem;
+  padding: .85rem 1.5rem;
+  background-color: var(--color-blue-link);
+  color: var(--color-bg-white);
+}
+
+button:focus, button:hover {
+  background: var(--color-blue-link-hover);
+  cursor: pointer;
+}
+
+em {
+  color: var(--color-text-dark);
+  font-style: normal;
+}
+
+sup {
+  position: relative;
+  font-size: 0.6em;
+  vertical-align: middle;
+  bottom: 0.5em;
+  left: -0.2em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: 75%;
+}
+
+/* ---------------------------------------------------------------
+    Text Styles
+----------------------------------------------------------------*/
+.gradient-text-blue {
+  background: linear-gradient(to right, var(--color-blue-gradient-start), var(--color-blue-gradient-end));
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-colorful {
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/fx/gradient.jpg");
+  color: transparent;
+}
+
+.description-text {
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------
+    Main Section
+----------------------------------------------------------------*/
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, var(--color-blue-light-gradient-start), var(--color-blue-light-gradient-end), var(--color-bg-white));
+}
+
+.main__title,
+.main__copy-text {
+  font-size: 2rem;
+}
+
+.main__title {
+  line-height: 1.125;
+  letter-spacing: 0.004em;
+  color: var(--color-text-dark);
+}
+
+.main__subtitle {
+  font-size: 4rem;
+  letter-spacing: -0.05em;
+}
+
+.main__media {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2.5rem 0;
+}
+
+.main__media-image {
+  width: 60%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.main__copy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main__copy-text {
+  letter-spacing: -0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.main__pricing {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  color: var(--color-text-dark);
+}
+
+.main__availability,
+.main__language {
+  font-weight: 400;
+  color: var(--color-text-dark);
+}
+
+.main__description {
+  width: 60%;
+  margin-top: 4rem;
+}
+
+/* ---------------------------------------------------------------
+    Section Design
+----------------------------------------------------------------*/
+.section-design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section-design__title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+.section-design__media {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0;
+  width: 100%;
+}
+
+.section-design__media-image {
+  width: 1728px;
+  height: 667px;
+  object-position: top;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------
+    Subsections
+----------------------------------------------------------------*/
+.subsection-size__screen-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  background: url("../images/sections/design_sizes_endframe__ckfqlo8f44eq_large_2x.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 2rem 0 1.5rem;
+  height: 800px;
+}
+
+.subsection-size__screen-text,
+.section-design__subtitle {
+  font-size: 4.5rem;
+}
+
+.subsection-size__screen-text {
+  color: var(--color-text-dark);
+}
+
+.subsection-size__screen-text span {
+  display: block;
+  font-size: 2rem;
+}
+
+.subsection-colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "one three"
+    "two three";
+  gap: 2rem;
+  place-items: center;
+  padding: 3rem 0 2rem;
+}
+
+.subsection-colors-item.one { grid-area: one; }
+.subsection-colors-item.two { grid-area: two; }
+.subsection-colors-item.three { grid-area: three; }
+
+/* ---------------------------------------------------------------
+    Colornav
+----------------------------------------------------------------*/
+.colornav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: none;
+  margin: 2rem 0 2.5rem;
+}
+
+.colornav-items {
+  display: flex;
+  justify-content: center;
+  border: none;
+  gap: 2.25rem;
+}
+
+.colornav-item {
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50rem;
+  background-color: var(--color-blue-link);
+  cursor: pointer;
+}
+
+.colornav-item.current {
+  outline: 2px solid var(--color-blue-link);
+  outline-offset: 3px;
+}
+
+.colornav-item[data-color="skyblue"] {
+  background-color: #c8d8e0;
+}
+
+.colornav-item[data-color="silver"] {
+  background-color: #e3e4e6;
+}
+
+.colornav-item[data-color="starlight"] {
+  background-color: #f0e4d3;
+}
+
+.colornav-item[data-color="midnight"] {
+  background-color: #2e3642;
+}
+
+.colornav-label {
+  display: none;
+  position: absolute;
+  font-size: 0.8rem;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.colornav-item.current .colornav-label {
+  display: block;
+}
+
+/* ---------------------------------------------------------------
+    Footer
+----------------------------------------------------------------*/
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 2rem 1rem;
+  margin-top: 4rem;
+  background: var(--color-bg-light);
+}
+
+footer p, footer span {
+  font-size: 0.9rem;
+  color: var(--color-text-gray);
+}
+
+footer span {
+  border-top: 1px solid var(--color-text-gray);
+  padding-top: 1rem;
+}
+
+/* ---------------------------------------------------------------
+    Responsive Styles
+----------------------------------------------------------------*/
+
+@media (max-width: 734px) {
+  p {
+    font-size: 1rem;
+  }
+
+  .main {
+    padding: 5rem;
+  }
+
+  .main__title {
+    font-size: 1.25rem;
+  }
+
+  .main__subtitle {
+    font-size: 2.5rem;
+  }
+
+  .main__copy-text {
+    font-size: 1.65rem;
+  }
+
+  .main__description {
+    width: 90%;
+  }
+
+  section {
+    width: 60%;
+  }
+
+  .section-design__media-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-design__subtitle {
+    font-size: 2.5rem;
+  }
+
+  .subsection-size__screen-container {
+    height: 350px;
+    margin: 3.5rem 0 1rem;
+  }
+
+  .subsection-size__screen-text {
+    font-size: 2.5rem;
+  }
+
+  .subsection-size__screen-text span {
+    font-size: 1.25rem;
+  }
+
+  .subsection-colors {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .subsection-colors-item.one {
+    display: none;
+  }
+}
